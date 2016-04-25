@@ -1,0 +1,15 @@
+{
+  "name": "super-sayayinize",
+  "version": "0.0.0",
+  "description": "Sayayinize yourself!",
+  "scripts": {
+    "start": "killall node; ./node_modules/static-server/bin/static-server.js & ./node_modules/livereload/bin/livereload.js & google-chrome http://localhost:9080",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Julian Selser <julianselser@yahoo.com.ar>",
+  "license": "MIT",
+  "devDependencies": {
+    "livereload": "^0.4.1",
+    "static-server": "^2.0.2"
+  }
+}
