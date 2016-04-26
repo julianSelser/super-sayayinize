@@ -44,7 +44,6 @@ body{
 
 #content{
     width: 50%;
-    height: 100%;
     margin: 0 auto;
 }
 
@@ -53,7 +52,7 @@ body{
 }
 
 #fakeImageSelector{
-    margin-top: 1em;
+    margin: 1em 0 1em 0;
     padding: 1em;
     width: 100%;
     border-left-width: 0;
@@ -77,4 +76,11 @@ body{
     position: absolute;
     width: 100%;
     height: 100%;
+}
+
+#header{
+    width: 100%;
+    padding: .2em 0 .2em 0;
+    text-align: center;
+    background-color: burlywood;
 }

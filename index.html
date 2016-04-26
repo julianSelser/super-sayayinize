@@ -30,6 +30,7 @@ THE SOFTWARE.
         <link type="text/css" rel="stylesheet" href="stylesheets/main.css">
     </head>
     <body>
+        <div id="header">made with &#x1F4AA; by Julian Selser</div>
         <div id="content">
             <div id="imageAndCanvasContainer">
                 <canvas class="overlay-canvas" id="powerLevel"></canvas>
@@ -51,10 +52,30 @@ THE SOFTWARE.
                 fileReader.onload = function(eventImageLoaded) {
                     document.getElementById('imageToSayanize').src
                             = eventImageLoaded.target.result;
+                    
+                    drawHair();
                 };
 
                 fileReader.readAsDataURL(file);
             };
+            
+            function drawHair() {
+                var hairCanvas = document.getElementById('sayayinHair');
+                var ctx = hairCanvas.getContext('2d');
+                var computedCanvasCss = getComputedStyle(hairCanvas);
+                var img = new Image();
+                
+                img.onload = function(){
+                    //sets canvas dimensions, apparently, they are unrelated to current dimensions
+                    hairCanvas.height = computedCanvasCss.height.replace("px", "");
+                    hairCanvas.width = computedCanvasCss.width.replace("px", "");
+                    
+                    ctx.drawImage(img, 0, 0);
+                };
+                
+                img.src = 'img/sayayinHair.svg';
+            }
+            
         </script>
         <script src="http://localhost:35729/livereload.js?snipver=1"></script>
     </body>
