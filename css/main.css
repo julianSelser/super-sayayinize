@@ -60,7 +60,7 @@ body{
     background-color: #GCBFAF;
 }
 
-#imageAndCanvasContainer, #imageToSayanize{
+#imageAndCanvasContainer, #imageToSayanize, #controls{
     position: relative;
     width: 100% !important;
     height: auto !important;
@@ -83,4 +83,23 @@ body{
     padding: .2em 0 .2em 0;
     text-align: center;
     background-color: burlywood;
+}
+
+#powerRange{
+    width: 100%;
+}
+
+#rangeContainer{
+    display: block;
+    overflow: hidden;
+    padding-left: 1em;
+}
+
+#powerLabel{
+    float: left;
+    padding-top: 0.2%
+}
+
+#controls{
+    padding-top: 1em
 }

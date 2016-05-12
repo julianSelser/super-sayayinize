@@ -27,56 +27,25 @@ THE SOFTWARE.
         <title>Super sayayinize yourself!</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link type="text/css" rel="stylesheet" href="stylesheets/main.css">
+        <link type="text/css" rel="stylesheet" href="css/main.css">
     </head>
     <body>
         <div id="header">made with &#x1F4AA; by Julian Selser</div>
         <div id="content">
+            <div id="controls">
+                <label id="powerLabel">Power Level</label>
+                <span id="rangeContainer"><input id="powerRange" type="range" /></span>
+            </div>
             <div id="imageAndCanvasContainer">
                 <canvas class="overlay-canvas" id="powerLevel"></canvas>
                 <canvas class="overlay-canvas" id="sayayinHair"></canvas>
+                <!-- img src missing on purpose, will be loaded by user -->
                 <img class="display-block" id="imageToSayanize" />
             </div>
             <input type="button" id="fakeImageSelector" value="Upload image!" />
             <input class="display-block" id="imageSelector" type="file" />
         </div>
-        <script>
-            document.getElementById('fakeImageSelector').onclick = function(){
-                document.getElementById('imageSelector').click();
-            };
-            
-            document.getElementById('imageSelector').onchange = function(eventImageSelected) {
-                var file = eventImageSelected.target.files[0];
-                var fileReader = new FileReader();
-
-                fileReader.onload = function(eventImageLoaded) {
-                    document.getElementById('imageToSayanize').src
-                            = eventImageLoaded.target.result;
-                    
-                    drawHair();
-                };
-
-                fileReader.readAsDataURL(file);
-            };
-            
-            function drawHair() {
-                var hairCanvas = document.getElementById('sayayinHair');
-                var ctx = hairCanvas.getContext('2d');
-                var computedCanvasCss = getComputedStyle(hairCanvas);
-                var img = new Image();
-                
-                img.onload = function(){
-                    //sets canvas dimensions, apparently, they are unrelated to current dimensions
-                    hairCanvas.height = computedCanvasCss.height.replace("px", "");
-                    hairCanvas.width = computedCanvasCss.width.replace("px", "");
-                    
-                    ctx.drawImage(img, 0, 0);
-                };
-                
-                img.src = 'img/sayayinHair.svg';
-            }
-            
-        </script>
+        <script src="js/main.js"></script>
         <script src="http://localhost:35729/livereload.js?snipver=1"></script>
     </body>
 </html>
