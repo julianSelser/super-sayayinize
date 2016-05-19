@@ -42,18 +42,14 @@ body{
     display: block;
 }
 
-#content{
-    width: 50%;
-    margin: 0 auto;
-}
-
 #imageSelector{
     display: none;
 }
 
 #fakeImageSelector{
     margin: 1em 0 1em 0;
-    padding: 1em;
+    /*padding: 1em;*/
+    padding: 2.5% 0 2.5% 0;
     width: 100%;
     border-left-width: 0;
     border-right-width: 0;
@@ -78,11 +74,25 @@ body{
     height: 100%;
 }
 
-#header{
+#content{
+    width: 50%;
+    margin: 0 auto;
+    min-height: 100%;
+    margin-bottom: -20px;
+}
+
+#footer{
     width: 100%;
-    padding: .2em 0 .2em 0;
+    height: 20px;
     text-align: center;
     background-color: burlywood;
+}
+
+/*helps separate page from sticky footer...
+this darn hack comes out from the internet and works*/
+#clearfooter{
+    height: 20px;
+    clear: both;
 }
 
 #powerRange{
