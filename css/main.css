@@ -36,6 +36,10 @@ html, body{
 
 body{
     background-color: orange;
+    background-image: url("../img/backgroundArt.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 100%;
 }
 
 .display-block{
